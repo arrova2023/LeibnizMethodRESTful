@@ -1,0 +1,66 @@
+Método de Leibniz para Calcular Pi
+
+El Método de Leibniz es una fórmula matemática que permite estimar el valor del número Pi (π) utilizando una serie infinita. Fue propuesto por el matemático y filósofo Gottfried Wilhelm Leibniz en el siglo XVII. La fórmula se basa en la serie alternante de números enteros positivos y negativos, y se utiliza para aproximar el valor de Pi de manera iterativa.
+
+Cómo Funciona el Método de Leibniz:
+
+La fórmula de Leibniz se expresa como:
+
+π = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...)
+
+La idea es que al sumar y restar términos de esta serie infinita, se puede obtener una aproximación cada vez más precisa del valor de Pi. Cuanto más términos se utilicen en la serie, más cercana será la aproximación al valor real de Pi.
+
+Uso del Método de Leibniz a través de REST API:
+
+1. Realiza una solicitud POST a la siguiente URL utilizando una herramienta como Postman o cURL:
+
+POST http://localhost:8080/v1/pi/calculations
+
+2. Asegúrate de configurar los encabezados de la solicitud:
+
+   - Accept: application/json
+   - Content-Type: application/json
+
+3. En el cuerpo de la solicitud, proporciona los parámetros necesarios:
+
+{
+    "iterations": 100000,
+    "decimalPlaces": 9
+}
+
+- "iterations" es la cantidad de términos de la serie que se utilizarán en el cálculo. Cuanto mayor sea el número de iteraciones, más precisa será la aproximación.
+- "decimalPlaces" es la cantidad de decimales que deseas que se muestren en el resultado final.
+
+4. La API procesará la solicitud y calculará una aproximación de Pi utilizando el Método de Leibniz con la cantidad de iteraciones especificada. Luego, redondeará el resultado a la cantidad de decimales especificada.
+
+5. Recibirás una respuesta en formato JSON que contiene el valor aproximado de Pi y la cantidad de decimales que se mostraron en el resultado.
+
+Nota: El Método de Leibniz es una forma de aproximación y su precisión depende de la cantidad de iteraciones utilizadas. A medida que aumentas la cantidad de iteraciones, la aproximación se acerca más al valor real de Pi.
+
+Método de Leibniz para Calcular Pi con Threads (Futuro)
+
+El Método de Leibniz para calcular el valor de Pi es una técnica iterativa que puede beneficiarse de la paralelización. En un futuro, se planea implementar la utilización de threads (hilos) para acelerar el cálculo y mejorar el rendimiento del servicio.
+
+El cálculo de Pi mediante el Método de Leibniz implica la suma y resta de una serie infinita de términos. Cada término en la serie es independiente de los demás, lo que permite distribuir el trabajo entre múltiples hilos. Mediante la paralelización del proceso de cálculo, es posible reducir el tiempo total necesario para obtener una aproximación precisa de Pi.
+
+Cómo se Utilizarán Threads en el Cálculo de Pi:
+
+1. Se implementarán hilos (threads) para dividir el trabajo de cálculo en partes más pequeñas y asignar cada parte a un hilo individual.
+
+2. Cada hilo se encargará de calcular un rango específico de términos de la serie de Leibniz.
+
+3. Una vez que todos los hilos hayan realizado sus cálculos, los resultados se combinarán para obtener una aproximación final de Pi.
+
+4. La implementación de threads permitirá que el cálculo se realice de manera concurrente, aprovechando los recursos de procesamiento disponibles y acelerando el proceso.
+
+Beneficios de la Implementación de Threads:
+
+- Mejora en el rendimiento: Al utilizar múltiples hilos, se podrá aprovechar mejor los recursos de la CPU y reducir el tiempo total necesario para el cálculo.
+
+- Eficiencia en recursos: La paralelización del cálculo permite distribuir la carga de trabajo, lo que puede resultar en un uso más eficiente de los recursos del sistema.
+
+- Escalabilidad: La implementación de threads proporciona la base para futuras optimizaciones y ajustes para manejar cargas de trabajo más grandes y complejas.
+
+Es importante tener en cuenta que la implementación de threads también conlleva desafíos, como la sincronización y la gestión de recursos compartidos. Sin embargo, con una planificación cuidadosa y un diseño adecuado, se puede lograr una mejora significativa en el rendimiento del cálculo de Pi utilizando el Método de Leibniz.
+
+En resumen, la futura implementación de threads en el cálculo de Pi mediante el Método de Leibniz tiene como objetivo mejorar la eficiencia y el rendimiento del servicio. Esto permitirá obtener aproximaciones más precisas de Pi en un tiempo más corto, lo que resultará beneficioso para aplicaciones que requieren cálculos numéricos intensivos.
